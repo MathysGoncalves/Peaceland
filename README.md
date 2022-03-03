@@ -7,7 +7,7 @@
 
 Peaceland is a blessed country, led by an affable and clear-sighted ruler. He takes great pride in its effort to bring peace, happiness, and harmony to all its citizens.
 To do so, they heavily rely on their peacemakers. A governmental agency
-dedicated to make peace around the country. To reach their ambition, they bring assistance to any agitated person and help them to recover peace. More generally they help citizen to stay in line with their country harmonious goal To help its peacemakers squads, Peaceland engineers have created a working autonomous drone called peacewatcher.
+dedicated to make peace around the country. To reach their ambition, they bring assistance to any agitated person and help them to recover peace. More generally they help citizen to stay in line with their country harmonious goal. To help its peacemakers squads, Peaceland engineers have created a working autonomous drone called peacewatcher.
 They need you to create the program that will receive and manage peacewatchers’s data.
 
 This program must :
@@ -52,7 +52,7 @@ program that can handle the load.
 1) What technical/business constraints should the data storage component of the program architecture meet to fulfill the requirement described by the customer in paragraph «Statistics» ?
 So what kind of component(s) (listed in the lecture) will the architecture need?
 
-> From user point of view, the data storage will have to handle large and fast data volumes. Also, we have no idea of ​​the use of the stored data nor the duration of the storage. Availability is the most important property in this section we offer an AP solution. Peaceland will therefore need a distributed DataLake updated every day (batch).
+> From the user's point of view, the data storage will have to handle large and fast data volumes. Also, we have no idea of ​​the use of the stored data nor the duration of the storage. Availability is the most important property in this section we offer an AP solution. Peaceland will therefore need a distributed DataLake updated every day (batch).
 
 
 2) What business constraint should the architecture meet to fulfill the requirement describe in the paragraph «Alert»? Which component to choose?
@@ -61,11 +61,15 @@ So what kind of component(s) (listed in the lecture) will the architecture need?
 
 3) What mistake(s) from Peaceland can explain the failed attempt?
 
-> Data engineers are more likely to succeed in that taskbecause they are specialised on the architecture while the data scientists only come afterwards.
+> Data engineers are more likely to succeed in that task because they are specialised on the architecture while the data scientists only come afterwards.
 
 4) Peaceland has likely forgotten some technical information in the report sent by the drone. In the future, this information could help Peaceland make its peacewatchers much more efficient. Which information?
 
-> XXXXXXXXXXX
+> Potentially useful information sent by the peacewatchers are
+    - A timestamp of the report - This is useful to determine how fast the peacemakers reacted to a specific case and/or if there is an increase in lack of peace at a specific time in the day
+    - The gender of the unhappy citizen - Again to know if a specific population needs to be made more peaceful
+    - The workplace/profession of the target - Useful to know if a certain worplace/profession tends to make people particularly unhappy
+    - The number of time a citizen has been sent in a happiness camp - Informs the peacekeepers if there is a need to take a more permanent solution for the citizen's happiness
 
 ## Project
 

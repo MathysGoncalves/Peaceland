@@ -61,7 +61,7 @@ So what kind of component(s) (listed in the lecture) will the architecture need?
 
 3) What mistake(s) from Peaceland can explain the failed attempt?
 
-> XXXXXXXXXXX
+> Data engineers are more likely to succeed in that taskbecause they are specialised on the architecture while the data scientists only come afterwards.
 
 4) Peaceland has likely forgotten some technical information in the report sent by the drone. In the future, this information could help Peaceland make its peacewatchers much more efficient. Which information?
 

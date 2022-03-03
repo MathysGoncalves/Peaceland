@@ -66,10 +66,10 @@ So what kind of component(s) (listed in the lecture) will the architecture need?
 4) Peaceland has likely forgotten some technical information in the report sent by the drone. In the future, this information could help Peaceland make its peacewatchers much more efficient. Which information?
 
 > Potentially useful information sent by the peacewatchers are
-    - A timestamp of the report - This is useful to determine how fast the peacemakers reacted to a specific case and/or if there is an increase in lack of peace at a specific time in the day
-    - The gender of the unhappy citizen - Again to know if a specific population needs to be made more peaceful
-    - The workplace/profession of the target - Useful to know if a certain worplace/profession tends to make people particularly unhappy
-    - The number of time a citizen has been sent in a happiness camp - Informs the peacekeepers if there is a need to take a more permanent solution for the citizen's happiness
+>    - A timestamp of the report - This is useful to determine how fast the peacemakers reacted to a specific case and/or if there is an increase in lack of peace at a specific time in the day
+>    - The gender of the unhappy citizen - Again to know if a specific population needs to be made more peaceful
+>    - The workplace/profession of the target - Useful to know if a certain worplace/profession tends to make people particularly unhappy
+>    - The number of time a citizen has been sent in a happiness camp - Informs the peacekeepers if there is a need to take a more permanent solution for the citizen's happiness
 
 ## Project
 
@@ -78,6 +78,6 @@ deal with the drone’s data. Peaceland asks you for advice to design an archite
 them to create a product they could sell to different police forces.
 It's up to you to report and recommend the right architecture.
 Based on the preliminary questions, your solution is very likely to include :
-● at least one distributed storage
-● at least one distributed stream
-● at least two stream consumer
+- at least one distributed storage
+- at least one distributed stream
+- at least two stream consumer

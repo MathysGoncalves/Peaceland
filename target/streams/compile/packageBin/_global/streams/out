@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/mathysg/Documents/Cours/Data Engineering/Peaceland_Project/Peaceland/target/scala-2.12/peaceland_project_2.12-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Person.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mathysg/Documents/Cours/Data Engineering/Peaceland_Project/Peaceland/target/scala-2.12/classes/Person.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RunSceanario$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mathysg/Documents/Cours/Data Engineering/Peaceland_Project/Peaceland/target/scala-2.12/classes/RunSceanario$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RunSceanario.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mathysg/Documents/Cours/Data Engineering/Peaceland_Project/Peaceland/target/scala-2.12/classes/RunSceanario.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Person$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/mathysg/Documents/Cours/Data Engineering/Peaceland_Project/Peaceland/target/scala-2.12/classes/Person$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

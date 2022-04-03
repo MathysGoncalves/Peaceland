@@ -1,16 +1,41 @@
+import org.apache.spark.sql._
+import org.apache.spark.sql.SparkSession
 
+object SparkSessionTest {
+  def main(args:Array[String]): Unit ={
 
-object ProducerApp extends App {
+    var topic = "stream1"
+    var bootstrapServer = "localhost:9092"
+    var namenode = "hdfs://localhost:8020"
 
-  val topic = "demo-topic"
+    val spark = SparkSession.builder()
+      .master("local[1]")
+      .appName("droneStream")
+      .getOrCreate();
 
-  val producer = new KafkaProducer("localhost:9092")
+    println("Test de fonctionnement du stream");
+    println("APP Name :"+spark.sparkContext.appName);
+    println("Master :"+spark.sparkContext.master);
 
-  val batchSize = 100
+    val df:DataFrame = spark
+      .readStream
+      .format("kafka")
+      .option("kafka.bootstrap.servers", bootstrapServer)
+      .option("subscribe", topic) //selection du topic utilisé
+      .option("startingOffsets","earliest")
+      .load()
 
-  (1 to 1000000).toList.map(no => "Message " + no).grouped(batchSize).foreach { message =>
-    println("Sending message batch size " + message.length)
-    producer.send(topic, message)
+    df.writeStream
+      .format("console")
+      .outputMode("append")
+      .start()
+      .awaitTermination()
+
+    println("Dataframe has been written")
+
+    spark.sparkContext.stop()
   }
-
 }
+
+
+

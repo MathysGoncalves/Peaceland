@@ -1,0 +1,7 @@
+#Successful Tests
+#Fri Mar 04 13:23:49 CET 2022
+com.tp.spark.core.Ex4InvertedIndexSpec=1646396628394
+com.tp.spark.core.Ex3HashTagMiningSpec=1646396629462
+com.tp.spark.core.Ex1UserMiningSpec=1646396629845
+com.tp.spark.core.Ex2TweetMiningSpec=1646396629507
+com.tp.spark.core.Ex0WordcountSpec=1646396628416

@@ -32,7 +32,6 @@ object RunSceanario {
 
     Thread.sleep(2000)
     sendRecord(kafkaproducer)
-
   }
 
   def main(args: Array[String]): Unit = {

@@ -41,11 +41,16 @@ object Consumer {
     // 1
     df.select(countDistinct("droneId")).show()
     // 2
-    df.select("citizen", "peacescore").where("peacescore>= 75").show
+    df.select("citizen", "peacescore").where("peacescore>= 75").show()
     // 3
     df.select("peacescore").orderBy(desc("peacescore")).show()
     // 4
     //df.select("droneId", "peacescore").groupBy("droneId").show()
+    // 5
+    df.select(avg("peacescore")).where("date>=1649349705").show()
+    // 6
+    df.select("citizen","people").where("lon.between(48.848370, 48.868370) and lat.between(2.284481,2.304481").show()
+    
 
     spark.close
   }

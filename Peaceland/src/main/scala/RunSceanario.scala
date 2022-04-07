@@ -10,56 +10,34 @@ import java.io.File
 
 object RunSceanario {
 
-  val r = scala.util.Random
-  def seq(p:Product) = p.productIterator.toList
+  val props: Properties = new Properties()
+  props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
+  props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer])
+  props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer])
 
-  def dataGen() = seq(
-    (java.util.UUID.randomUUID.toString, 3 + r.nextInt(( 97 - 3) + 1)),
-    Address.latitude,
-    Address.longitude,
-    Lorem.sentence(),
-    (java.util.UUID.randomUUID.toString, 3 + r.nextInt(( 97 - 3) + 1), (java.util.UUID.randomUUID.toString, 3 + r.nextInt(( 97 - 3) + 1))),
-    java.time.LocalDate.now,
-    15 + r.nextInt(( 99 - 15) + 1),
-    10 + r.nextInt(( 30 - 10) + 1),
-    r.nextInt(( 30 - 10) + 1)
-  )
+  val producer = new KafkaProducer[String, String](props)
+  val topic = "report"
 
-  implicit object MyFormat extends DefaultCSVFormat {
-    override val delimiter = ';'
+  def sendRecord(kafkaproducer : KafkaProducer[String, String]) {
+
+    val report = Reports.create()
+    val record = new ProducerRecord[String, String](topic, report.droneId.toString, Reports.report_toString(report))
+    val metadata=producer.send(record)
+
+    printf(s"sent record(key=%s value=%s) " +
+      "meta(partition=%d, offset=%d)\n",
+      record.key(), record.value(),
+      metadata.get().partition(),
+      metadata.get().offset())
+
+    Thread.sleep(2000)
+    sendRecord(kafkaproducer)
+
   }
 
   def main(args: Array[String]): Unit = {
-
-    val fileName = "data/event.csv"
-    val f = new File(fileName)
-    val writer = CSVWriter.open(f)
-    val randomReport = (0 to 500).map(x => dataGen())
-    writer.writeAll(randomReport)
-    writer.close()
-
-    val props: Properties = new Properties()
-    props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
-    props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer])
-    props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer])
-
-    val producer: KafkaProducer[String, String] = new KafkaProducer[String, String](props)
-    val topicName = "report"
-
-    for (line <- Source.fromFile(fileName).getLines()) {
-      val key = line.split(",") {
-        0
-      }
-      val record: ProducerRecord[String, String] = new ProducerRecord[String, String](topicName, key, line)
-
-      producer.send(record, (recordMetadata: RecordMetadata, exception: Exception) => {
-        if (exception != null) {
-          exception.printStackTrace()
-        } else {
-          println(s"Meta: $recordMetadata")
-        }
-      })
-    }
-    producer.close()
+    sendRecord(producer)
   }
+
 }
+

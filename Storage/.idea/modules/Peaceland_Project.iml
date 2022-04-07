@@ -51,6 +51,7 @@
     <orderEntry type="library" name="sbt: io.dropwizard.metrics:metrics-jvm:3.1.5:jar" level="project" />
     <orderEntry type="library" name="sbt: io.netty:netty-all:4.1.17.Final:jar" level="project" />
     <orderEntry type="library" name="sbt: io.netty:netty:3.9.9.Final:jar" level="project" />
+    <orderEntry type="library" name="sbt: it.bitbl:scala-faker_2.12:0.4:jar" level="project" />
     <orderEntry type="library" name="sbt: javax.activation:activation:1.1.1:jar" level="project" />
     <orderEntry type="library" name="sbt: javax.annotation:javax.annotation-api:1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: javax.inject:javax.inject:1:jar" level="project" />
@@ -166,6 +167,7 @@
     <orderEntry type="library" name="sbt: org.spark-project.spark:unused:1.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.tukaani:xz:1.5:jar" level="project" />
     <orderEntry type="library" name="sbt: org.xerial.snappy:snappy-java:1.1.8.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.yaml:snakeyaml:1.13:jar" level="project" />
     <orderEntry type="library" name="sbt: oro:oro:2.0.8:jar" level="project" />
     <orderEntry type="module-library">
       <library name="sbt: unmanaged-sources-and-docs">

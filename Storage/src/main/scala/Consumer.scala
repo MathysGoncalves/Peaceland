@@ -35,6 +35,7 @@ object Consumer {
       .format("csv")
       .option("checkpointLocation", "data/checkpoints")
       .option("path", "data/storage")
+      .outputMode("append")
       .start()
 
     query.awaitTermination()
